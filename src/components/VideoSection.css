@@ -1,0 +1,35 @@
+.video-section {
+    padding: 50px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.video-container {
+    position: relative;
+    width: 60%;
+}
+
+.video-container video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.video-overlay-text {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+    text-align: left;
+    z-index: 10;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.video-overlay-text h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.video-overlay-text p {
+    font-size: 16px;
+}
