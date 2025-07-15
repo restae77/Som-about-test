@@ -1,13 +1,15 @@
 .app-section {
     position: relative;
-    display: flex; /* layout*/
-    justify-content: flex-start; 
-    align-items: center; 
-    padding: 50px 20px; 
-    background-color: #463EE3; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #463EE3;
     color: #fff;
-    min-height: 600px; 
-    overflow: hidden;
+    min-height: 600px;
+    overflow: hidden; 
+    width: 100%; 
+    box-sizing: border-box; 
 }
 
 .ellipse-pair {
@@ -30,13 +32,12 @@
     border-radius: 50%;
 }
 
-
 .ellipse-pair.top-left .ellipse.outer {
     width: 400px;
     height: 400px;
     background-color: #1006C4;
-    top: -150px;
-    left: -150px;
+    top: -100px; 
+    left: -100px; 
     z-index: 1;
 }
 
@@ -44,18 +45,17 @@
     width: 350px;
     height: 350px;
     background-color: #1E1A56;
-    top: -130px;
-    left: -130px;
+    top: -80px; 
+    left: -80px; 
     z-index: 2;
 }
-
 
 .ellipse-pair.bottom-right .ellipse.outer {
     width: 400px;
     height: 400px;
     background-color: #1006C4;
-    bottom: -150px;
-    right: -150px;
+    bottom: -100px; 
+    right: -100px; 
     z-index: 1;
 }
 
@@ -63,16 +63,16 @@
     width: 350px;
     height: 350px;
     background-color: #1E1A56;
-    bottom: -130px;
-    right: -130px;
+    bottom: -80px; 
+    right: -80px; 
     z-index: 2;
 }
 
 .app-content {
     z-index: 1;
-    max-width: 500px; 
-    padding-left: 50px; 
-    flex-shrink: 0; /* Prevent from shrinking */
+    max-width: 500px;
+    padding-left: 50px;
+    flex-shrink: 0;
 }
 
 .app-content h2 {
@@ -89,12 +89,13 @@
 
 .app-buttons {
     display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 15px; 
-    max-width: 60%; 
+    flex-direction: column;
+    gap: 15px;
+    max-width: 60%;
 }
 
-.app-store, .play-store {
+.app-store,
+.play-store {
     background-color: #000;
     color: #fff;
     padding: 12px 24px;
@@ -104,12 +105,13 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    width: 100%; 
-    box-sizing: border-box; 
+    width: 100%;
+    box-sizing: border-box;
     transition: background-color 0.3s ease;
 }
 
-.app-store:hover, .play-store:hover {
+.app-store:hover,
+.play-store:hover {
     background-color: #333;
 }
 
@@ -120,83 +122,128 @@
 
 .phone-img {
     position: absolute;
-    right: 20px; 
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    width: 40%; 
-    max-width: 500px; 
+    width: 40%;
+    max-width: 500px;
     z-index: 1;
-    height: auto; /* Maintain aspect ratio */
-    flex-grow: 1; /* Allow image to fill remaining space */
+    height: auto;
 }
 
 /* Media Queries */
 @media (max-width: 1200px) {
     .app-section {
         min-width: 100%; 
-        padding: 30px 15px; 
-        min-height: 500px; 
+        padding: 30px 15px;
+        min-height: 500px;
+        flex-direction: column; 
+        align-items: center; 
+        overflow: hidden; 
     }
 
     .app-content {
-        max-width: 400px; 
-        padding-left: 30px; 
+        max-width: 100%; 
+        padding-left: 0; 
+        padding: 0 15px; 
     }
 
     .app-buttons {
-        gap: 10px; 
+        gap: 10px;
+        max-width: 80%; 
     }
 
-    .app-store, .play-store {
-        padding: 10px 20px; 
+    .app-store,
+    .play-store {
+        padding: 10px 20px;
     }
 
     .phone-img {
-        width: 45%; 
+        position: relative; 
+        right: auto;
+        top: auto;
+        transform: none;
+        width: 60%; 
         max-width: 400px;
+        margin-top: 20px; 
     }
 
     .ellipse-pair.top-left .ellipse.outer {
         width: 300px;
         height: 300px;
-        top: -100px;
-        left: -100px;
+        top: -50px; 
+        left: -50px; 
     }
 
     .ellipse-pair.top-left .ellipse.inner {
         width: 250px;
         height: 250px;
-        top: -80px;
-        left: -80px;
+        top: -40px; 
+        left: -40px; 
     }
 
     .ellipse-pair.bottom-right .ellipse.outer {
         width: 300px;
         height: 300px;
-        bottom: -100px;
-        right: -100px;
+        bottom: -50px; 
+        right: -50px; 
     }
 
     .ellipse-pair.bottom-right .ellipse.inner {
         width: 250px;
         height: 250px;
-        bottom: -80px;
-        right: -80px;
+        bottom: -40px; 
+        right: -40px; 
     }
 }
 
 @media (max-width: 768px) {
+    .app-section {
+        padding: 20px 10px;
+        min-height: 400px; 
+        overflow: hidden; 
+    }
+
     .app-content {
-        max-width: 300px; 
-        padding-left: 20px;
+        max-width: 100%;
+        padding: 0 10px;
     }
 
     .phone-img {
-        width: 50%; 
+        width: 80%;
         max-width: 300px;
     }
 
-    .app-store, .play-store {
-        padding: 8px 16px; 
+    .app-store,
+    .play-store {
+        padding: 8px 16px;
+    }
+
+    .ellipse-pair.top-left .ellipse.outer {
+        width: 150px;
+        height: 150px;
+        top: -30px; 
+        left: -30px; 
+    }
+
+    .ellipse-pair.top-left .ellipse.inner {
+        width: 100px;
+        height: 100px;
+        top: -20px; 
+        left: -20px; /
+    }
+
+    .ellipse-pair.bottom-right .ellipse.outer {
+        width: 150px;
+        height: 150px;
+        bottom: -30px; 
+        right: -30px; 
+    }
+
+    .ellipse-pair.bottom-right .ellipse.inner {
+        width: 100px;
+        height: 100px;
+        bottom: -20px; 
+        right: -20px; 
     }
 }
